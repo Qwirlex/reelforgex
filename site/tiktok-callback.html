@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8" /><title>ReelForgeX</title><link rel="stylesheet" href="/assets/site.css" /></head>
+<body>
+  <main class="legal" style="text-align:center">
+    <h1>Returning to the app…</h1>
+    <p id="msg">If nothing happens, <a id="link" href="#">click here</a>.</p>
+  </main>
+  <script>
+    // Совместимость со старым прототипом ClipPoster: передаём code/state в приложение
+    var q = window.location.search || ''
+    var target = 'clipapp://tiktok-callback' + q
+    document.getElementById('link').href = target
+    if (q.indexOf('code=') !== -1 || q.indexOf('error=') !== -1) window.location.href = target
+  </script>
+</body>
+</html>
